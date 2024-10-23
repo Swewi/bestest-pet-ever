@@ -20,59 +20,97 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            background-color: #fff;
         }
 
-        nav {
+        body {
+            font-family: "Caveat", cursive;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            height: 100vh;
+        }
+
+        header a,
+        nav a {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 500;
-            padding: 0.5rem 0;
+            padding: 0.5rem 0.2rem;
+            margin: 0.5rem 0.3rem 1rem 0.3rem;
         }
     </style>
 
 </head>
 
-<body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-menu">
-            <div>
-                <a class="navbar-burger is-active" role="button" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-            <div class="tabs is-centered is-boxed is-medium navbar-menu has-shadow">
-                <ul>
-                    <li class="is-active">
+<body class="has-background-grey-darker">
+    <section class="hero is-success is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <header class="navbar has-background-grey-darker">
+                <div class="container">
+                    <div class="navbar-brand">
                         <a class="navbar-item">
-                            <span class="icon is-small"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
-                            <span>Information</span>
+                            <img src="https://bulma.io/assets/images/bulma-type-white.png" alt="Logo" />
                         </a>
-                    </li>
-                    <li>
-                        <a class="navbar-item">
-                            <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                            <span>Gallery</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navbar-item">
-                            <span class="icon is-small"><i class="fas fa-address-card" aria-hidden="true"></i></span>
-                            <span>Contact Us</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-    </nav>
+                        <span class="navbar-burger has-text-white" data-target="navbarMenuHeroC">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroC" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="is-active navbar-item has-text-white">
+                                <span class="icon is-small"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
+                                <span>Information</span>
+                            </a>
+                            <a class="navbar-item has-text-white">
+                                <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                                <span>Gallery</span>
+                            </a>
+                            <a class="navbar-item has-text-white">
+                                <span class="icon is-small"><i class="fas fa-address-card"
+                                        aria-hidden="true"></i></span>
+                                <span>Contact Us</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
 
+        <!-- Hero content: will be in the middle -->
+        <section class="hero is-fullheight has-background-grey-darker is-bold">
+            <div class="hero-body">
+                <div class="container has-text-centered has-text-white">
+                    <h1 class="title is-1 has-text-white">Saphira</h1>
+                    <h2 class="subtitle is-3 has-text-white">The Best Cat</h2>
+                    <p class="is-size-4">Saphira is a beautiful cat with a unique personality. She is a mix of a Siamese
+                        and
+                        a
+                        Persian cat. She is very friendly and loves to play with her toys. She is also very curious and
+                        loves
+                        to explore new places. Saphira is a very special cat and she is loved by everyone who meets her.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <h1>Hello World</h1>
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot has-background-grey-darker">
+            <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                    <ul class="is-size-5">
+                        <li class="is-active"><a class="has-text-white">Information</a></li>
+                        <li><a class="has-text-white">Gallery</a></li>
+                        <li><a class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
 </body>
 
 <!-- scripts -->
 <script src="https://kit.fontawesome.com/1f32015eb0.js" crossorigin="anonymous"></script>
-
 
 </html>
