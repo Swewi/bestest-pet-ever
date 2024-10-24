@@ -32,9 +32,12 @@
         header a,
         nav a {
             font-family: 'Space Grotesk', sans-serif;
-            font-weight: 500;
-            padding: 0.5rem 0.2rem;
-            margin: 0.5rem 0.3rem 1rem 0.3rem;
+            font-weight: 300;
+            padding: 0.5rem;
+            margin: 0.5rem 0.3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: medium;
         }
 
         .hero {
@@ -59,14 +62,9 @@
             margin-bottom: 0.2rem;
         }
 
-        .hero-body .container {
-            position: relative;
-        }
-
         @media screen and (min-width: 1408px) {
             .container:not(.is-max-tablet):not(.is-max-desktop):not(.is-max-widescreen) {
                 max-width: 1400px;
-                font-size: xx-large;
             }
         }
     </style>
@@ -77,10 +75,10 @@
     <section class="hero is-success is-fullheight">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
-            <header class="navbar has-background-grey-darker">
+            <header id="home" class="navbar has-background-grey-darker">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="#home">
                             <img src="https://bulma.io/assets/images/bulma-type-white.png" alt="Logo" />
                         </a>
                         <span class="navbar-burger has-text-white" data-target="navbarMenuHeroC">
@@ -92,18 +90,18 @@
                     </div>
                     <div id="navbarMenuHeroC" class="navbar-menu">
                         <div class="navbar-end">
-                            <a class="is-active navbar-item has-text-white">
+                            <a class="navbar-item has-text-white" href="#info">
                                 <span class="icon is-small"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
-                                <span>Information</span>
+                                <span>Meet Saphira</span>
                             </a>
-                            <a class="navbar-item has-text-white">
+                            <a class="navbar-item has-text-white" href="#gallery">
                                 <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                                <span>Gallery</span>
+                                <span>See Saphira</span>
                             </a>
-                            <a class="navbar-item has-text-white">
+                            <a class="navbar-item has-text-white" href="#contact">
                                 <span class="icon is-small"><i class="fas fa-address-card"
                                         aria-hidden="true"></i></span>
-                                <span>Contact Us</span>
+                                <span>Ask Us</span>
                             </a>
                         </div>
                     </div>
@@ -112,8 +110,8 @@
         </div>
 
         <!-- Hero content: will be in the middle -->
-        <section class="hero is-fullheight has-background-grey-darker is-bold">
-            <div class="hero-body">
+        <section id="info" class="hero is-fullheight has-background-grey-darker is-bold">
+            <div class="hero-body is-relative">
                 <div class="container has-text-right">
                     <h1 class="title is-1 has-text-white">Saphira</h1>
                     <h2 class="subtitle is-3 has-text-white">The Cutest Cat</h2>
@@ -121,15 +119,31 @@
             </div>
         </section>
 
+        <section id="gallery">
+            <p>test</p>
+        </section>
+
         <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot has-background-grey-darker">
-            <nav class="tabs is-boxed is-fullwidth">
-                <div class="container">
+            <nav class="tabs is-boxed is-centered">
+                <div class="container is-flex is-align-items-center">
+                    <p class="is-size-5 has-text-white has-text-left">Most Loved Pet | SheCodes One Page Challenge
+                    </p>
                     <ul class="is-size-5">
-                        <li class="is-active"><a class="has-text-white">Information</a></li>
-                        <li><a class="has-text-white">Gallery</a></li>
-                        <li><a class="has-text-white">Contact</a></li>
+                        <li><a class="has-text-white" href="#home"><span class="icon is-medium"><i
+                                        class="fas fa-igloo is-size-4" aria-hidden="true"></i></span><span
+                                    class="sr-only">Home</span></a></li>
+                        <li><a class="has-text-white" href="#info"><span class="icon is-medium"><i
+                                        class="fas fa-circle-info is-size-4" aria-hidden="true"></i></span><span
+                                    class="sr-only">Info</span></a></li>
+                        <li><a class="has-text-white" href="#gallery"><span class="icon is-medium"><i
+                                        class="fas fa-image is-size-4" aria-hidden="true"></i></span><span
+                                    class="sr-only">Gallery</span></a></li>
+                        <li><a class="has-text-white" href="#contact"> <span class="icon is-medium"><i
+                                        class="fas fa-address-card is-size-4" aria-hidden="true"></i></span><span
+                                    class="sr-only">Contact</span></a></li>
                     </ul>
+                    <p class="is-size-6 has-text-white has-text-right">Saphira - The Best Cat</p>
                 </div>
             </nav>
         </div>
