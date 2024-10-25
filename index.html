@@ -62,6 +62,17 @@
             margin-bottom: 0.2rem;
         }
 
+        #contact {
+            padding: 1rem 2rem;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
         @media screen and (min-width: 1408px) {
             .container:not(.is-max-tablet):not(.is-max-desktop):not(.is-max-widescreen) {
                 max-width: 1400px;
@@ -92,16 +103,16 @@
                         <div class="navbar-end">
                             <a class="navbar-item has-text-white" href="#info">
                                 <span class="icon is-small"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
-                                <span>Meet Saphira</span>
+                                <span> Meet Saphira</span>
                             </a>
                             <a class="navbar-item has-text-white" href="#gallery">
                                 <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                                <span>See Saphira</span>
+                                <span> See Saphira</span>
                             </a>
                             <a class="navbar-item has-text-white" href="#contact">
                                 <span class="icon is-small"><i class="fas fa-address-card"
                                         aria-hidden="true"></i></span>
-                                <span>Ask Us</span>
+                                <span> Ask Us</span>
                             </a>
                         </div>
                     </div>
@@ -119,15 +130,69 @@
             </div>
         </section>
 
-        <section id="gallery">
+        <section id="gallery" class="has-background-grey-darker">
             <p>test</p>
+        </section>
+
+        <section id="contact" class="has-background-grey-darker">
+            <h3 class="title is-3 has-text-centered has-text-white">Would you like to ask us something?</h3>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">From</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input" type="text" placeholder="Name">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input" type="email" placeholder="Email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope-open"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">How can we help?</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <textarea class="textarea" placeholder="What would you like to know?"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <!-- Left empty for spacing -->
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary is-hovered is-focused is-active is-fullwidth">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"> Postage Paid</i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot has-background-grey-darker">
             <nav class="tabs is-boxed is-centered">
                 <div class="container is-flex is-align-items-center">
-                    <p class="is-size-5 has-text-white has-text-left">Most Loved Pet | SheCodes One Page Challenge
+                    <p class="is-size-5 has-text-white">Most Loved Pet | SheCodes One Page Challenge
                     </p>
                     <ul class="is-size-5">
                         <li><a class="has-text-white" href="#home"><span class="icon is-medium"><i
@@ -143,7 +208,6 @@
                                         class="fas fa-address-card is-size-4" aria-hidden="true"></i></span><span
                                     class="sr-only">Contact</span></a></li>
                     </ul>
-                    <p class="is-size-6 has-text-white has-text-right">Saphira - The Best Cat</p>
                 </div>
             </nav>
         </div>
