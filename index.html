@@ -66,6 +66,17 @@
             padding: 1rem 2rem;
         }
 
+        #btn-send {
+            width: fit-content;
+            padding: 0.5rem;
+        }
+
+        .lbl-form {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 300;
+            font-size: small;
+        }
+
         @media screen and (max-width: 1024px) {
             .container {
                 display: flex;
@@ -138,7 +149,7 @@
             <h3 class="title is-3 has-text-centered has-text-white">Would you like to ask us something?</h3>
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    <label class="label">From</label>
+                    <label class="label lbl-form">From</label>
                 </div>
                 <div class="field-body">
                     <div class="field">
@@ -161,7 +172,7 @@
             </div>
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    <label class="label">How can we help?</label>
+                    <label class="label lbl-form">How can we help?</label>
                 </div>
                 <div class="field-body">
                     <div class="field">
@@ -175,24 +186,25 @@
                 <div class="field-label">
                     <!-- Left empty for spacing -->
                 </div>
-                <div class="field-body">
+                <div id="btn-send" class="field-body">
                     <div class="field">
-                        <div class="control">
-                            <button class="button is-primary is-hovered is-focused is-active is-fullwidth">
+                        <div class="control  is-flex is-justify-content-center">
+                            <button class="button is-primary is-medium is-hovered is-focused is-rounded">
                                 <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"> Postage Paid</i>
-                                </span>
+                                    <i class="fas fa-envelope"></i></span>
+                                <span> Postage Paid</span>
                             </button>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot has-background-grey-darker">
             <nav class="tabs is-boxed is-centered">
                 <div class="container is-flex is-align-items-center">
-                    <p class="is-size-5 has-text-white">Most Loved Pet | SheCodes One Page Challenge
+                    <p class="is-size-6 has-text-white">Most Loved Pet | SheCodes One Page Challenge
                     </p>
                     <ul class="is-size-5">
                         <li><a class="has-text-white" href="#home"><span class="icon is-medium"><i
