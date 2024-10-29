@@ -50,6 +50,10 @@
             width: 25%;
         }
 
+        div.navbar {
+            margin: 0 auto;
+        }
+
         a.navbar-item img {
             border-radius: 10px;
             width: 7rem;
@@ -79,6 +83,19 @@
             margin-bottom: 0.2rem;
         }
 
+        #home {
+            background-image: linear-gradient(#4f4e4e, #363636, #4f4e4e);
+            box-shadow: 0 10px 15px 5px #36141460;
+        }
+
+        .hero-body {
+            box-shadow: 0 10px 15px 5px #69696960;
+        }
+
+        .saphira {
+            align-items: flex-start !important;
+        }
+
         #gallery {
             padding: 1rem;
         }
@@ -98,6 +115,24 @@
             font-size: small;
         }
 
+        @media screen and (max-width: 768px) {
+            h1.title.is-1 {
+                font-size: 6rem;
+            }
+
+            h2.subtitle.is-3 {
+                font-size: 1.5rem;
+            }
+
+            a.navbar-item {
+                width: 50%;
+            }
+
+            a.navbar-burger {
+                justify-content: flex-end !important;
+            }
+        }
+
         @media screen and (max-width: 1024px) {
             .container {
                 display: flex;
@@ -108,6 +143,14 @@
         @media screen and (min-width: 1408px) {
             .container:not(.is-max-tablet):not(.is-max-desktop):not(.is-max-widescreen) {
                 max-width: 1400px;
+            }
+        }
+
+        @media screen and (max-width: 1920px) {
+            .saphira .title.is-1,
+            .saphira .subtitle.is-3 {
+                color: #2f0fda !important;
+                text-shadow: #1f1e1e 1px 1px 1px;
             }
         }
     </style>
@@ -121,11 +164,12 @@
             <header id="home" class="navbar has-background-grey-darker">
                 <div class="container">
                     <div class="navbar-brand is-flex is-justify-content-end">
-                        <a class="navbar-item" href="#home">
+                        <a class="navbar-item has-text-white" href="#home"> Saphira the Cat
                             <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/148/495/original/saffie_01.jpeg?1729866854"
                                 alt="Saphira lying down and home" />
                         </a>
-                        <a role="button" class="navbar-burger has-text-white is-justify-content-center" aria-label="menu" aria-expanded="false">
+                        <a role="button" class="navbar-burger has-text-white is-justify-content-center"
+                            aria-label="menu" aria-expanded="false">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
@@ -133,7 +177,7 @@
                         </a>
                     </div>
                     <div id="navbarMenuHeroC" class="navbar-menu">
-                        <div class="navbar-start">
+                        <div class="navbar">
                             <a class="navbar-item has-text-white" href="#info">
                                 <span class="icon is-small"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
                                 <span> Meet Saphira</span>
@@ -155,10 +199,10 @@
 
         <!-- Hero content: will be in the middle -->
         <section id="info" class="hero is-fullheight has-background-grey-darker is-bold">
-            <div class="hero-body is-relative">
+            <div class="hero-body saphira">
                 <div class="container has-text-right">
-                    <h1 class="title is-1 has-text-white">Saphira</h1>
-                    <h2 class="subtitle is-3 has-text-white">The Cutest Cat</h2>
+                        <h1 class="title is-1 has-text-white">Saphira</h1>
+                        <h2 class="subtitle is-3 has-text-white">The Cutest Cat</h2>
                 </div>
             </div>
         </section>
@@ -210,7 +254,8 @@
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                Here she is playing with her favourite toy, it's really annoying for humans but she's so cute who cares.
+                                Here she is playing with her favourite toy, it's really annoying for humans but she's so
+                                cute who cares.
                                 <br />
                                 <time datetime="2016-1-1">19 July 2023</time>
                             </div>
@@ -398,7 +443,8 @@
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                We had a bit of a heatwave and Saphira was really hot, so she used my cold water bottle to cool down.
+                                We had a bit of a heatwave and Saphira was really hot, so she used my cold water bottle
+                                to cool down.
                                 <br />
                                 <time datetime="2016-1-1">30 May 2024</time>
                             </div>
