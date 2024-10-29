@@ -123,14 +123,14 @@
                     <div class="navbar-brand is-flex is-justify-content-end">
                         <a class="navbar-item" href="#home">
                             <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/148/495/original/saffie_01.jpeg?1729866854"
-                                alt="Logo" />
+                                alt="Saphira lying down and home" />
                         </a>
-                        <span class="navbar-burger has-text-white" data-target="navbarMenuHeroC">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
+                        <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
                     </div>
                     <div id="navbarMenuHeroC" class="navbar-menu">
                         <div class="navbar-start">
@@ -227,7 +227,8 @@
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                This is one of my favourite photos, we hadn't had her long but she reached out one day and gently lay her paw on my hand.
+                                This is one of my favourite photos, we hadn't had her long but she reached out one day
+                                and gently lay her paw on my hand.
                                 <br />
                                 <time datetime="2016-1-1">29 Dec 2022</time>
                             </div>
@@ -388,5 +389,23 @@
 
 <!-- scripts -->
 <script src="https://kit.fontawesome.com/1f32015eb0.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+                // Get the target from the "data-target" attribute
+                const target = document.getElementById('navbarMenuHeroC');
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                target.classList.toggle('is-active');
+            });
+        });
+    });
+</script>
 
 </html>
