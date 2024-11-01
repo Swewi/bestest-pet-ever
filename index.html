@@ -98,10 +98,12 @@
 
         #gallery {
             padding: 1rem;
+            margin-right: 1rem;
         }
 
         #contact {
             padding: 1rem 2rem;
+            margin-right: 1rem;
         }
 
         #btn-send {
@@ -113,6 +115,39 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 300;
             font-size: small;
+        }
+
+        .up-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin-top: 1rem;
+            transition: all 0.35s ease-in-out;
+            background-color: rgba(252, 78, 4, 0.5);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            box-shadow: 0 0 5px rgba(227, 227, 227);
+        }
+
+        .up-arrow:hover {
+            background: linear-gradient(170deg, #79d9ec, #4169e1, #6495ED);
+            box-shadow: 0 0 8px rgba(227, 227, 227);
+        }
+
+        .up-arrow svg {
+            width: 3rem;
+            height: 3rem;
+            fill: #000;
+            transition: all 0.35s ease-in-out;
+        }
+
+        .up-arrow:hover svg {
+            fill: #272a27;
         }
 
         @media screen and (max-width: 768px) {
@@ -568,7 +603,7 @@
                         <div class="field">
                             <div class="control is-flex is-justify-content-center">
                                 <button type="submit"
-                                    class="button is-primary is-medium is-hovered is-focused is-rounded"
+                                    class="button has-background-info-dark is-medium is-hovered is-focused is-rounded"
                                     aria-label="Send Message">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -606,6 +641,12 @@
             </nav>
         </div>
     </section>
+    <a href="#home" class="up-arrow" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <path
+                d="m296-224-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Z" />
+        </svg>
+    </a>
 
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/1f32015eb0.js" crossorigin="anonymous"></script>
