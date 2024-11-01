@@ -140,17 +140,39 @@
             }
         }
 
-        @media screen and (min-width: 1408px) {
-            .container:not(.is-max-tablet):not(.is-max-desktop):not(.is-max-widescreen) {
-                max-width: 1400px;
+        @media screen and (max-width: 1200px) {
+            .saphira .title.is-1 {
+                background: linear-gradient(170deg, #79d9ec, #191970, #4169e1, #6495ED);
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+                text-shadow: 2px 2px 4px rgba(20, 19, 19, 0.3);
+            }
+
+            .saphira .subtitle.is-3 {
+                color: #191a1a;
+                text-shadow: #1b34d1 0 0 2px;
             }
         }
 
-        @media screen and (max-width: 1920px) {
-            .saphira .title.is-1,
+        @media screen and (min-width: 1200px) {
+            .saphira .title.is-1 {
+                background: linear-gradient(170deg, #e9bb93, #e86800, #dc441a, #c20f15);
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+                text-shadow: 2px 2px 4px rgba(20, 19, 19, 0.3);
+            }
+
             .saphira .subtitle.is-3 {
-                color: #2f0fda !important;
-                text-shadow: #1f1e1e 1px 1px 1px;
+                color: #dc441a !important;
+                text-shadow: #191a1a 0 0 2px !important;
+            }
+        }
+
+        @media screen and (min-width: 1408px) {
+            .container:not(.is-max-tablet):not(.is-max-desktop):not(.is-max-widescreen) {
+                max-width: 1400px;
             }
         }
     </style>
@@ -201,8 +223,8 @@
         <section id="info" class="hero is-fullheight has-background-grey-darker is-bold">
             <div class="hero-body saphira">
                 <div class="container has-text-right">
-                        <h1 class="title is-1 has-text-white">Saphira</h1>
-                        <h2 class="subtitle is-3 has-text-white">The Cutest Cat</h2>
+                    <h1 class="title is-1">Saphira</h1>
+                    <h2 class="subtitle is-3">The Cutest Cat</h2>
                 </div>
             </div>
         </section>
