@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🐱%3C/text%3E%3C/svg%3E">
+        href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='0.9em'%20font-size='90'%3E%F0%9F%90%B1%3C/text%3E%3C/svg%3E">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap');
 
@@ -340,7 +340,7 @@
                             <div class="content">
                                 Sleeping kitty, so cute.
                                 <br>
-                                <time datetime="20123-02-26">26 Feb 2023</time>
+                                <time datetime="2023-02-26">26 Feb 2023</time>
                             </div>
                         </div>
                     </div>
@@ -521,57 +521,65 @@
 
         <section id="contact" class="has-background-grey-darker">
             <h3 class="title is-3 has-text-centered has-text-white">Would you like to ask us something?</h3>
-            <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                    <label class="label lbl-form">From</label>
-                </div>
-                <div class="field-body">
-                    <div class="field">
-                        <p class="control has-icons-left">
-                            <input class="input" type="text" placeholder="Name">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                            </span>
-                        </p>
+            <form action="/submit-form" method="POST" aria-labelledby="contact-form-title">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label for="user-name" class="label lbl-form">From</label>
                     </div>
-                    <div class="field">
-                        <p class="control has-icons-left has-icons-right">
-                            <input class="input" type="email" placeholder="Email">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-envelope-open"></i>
-                            </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                    <label class="label lbl-form">How can we help?</label>
-                </div>
-                <div class="field-body">
-                    <div class="field">
-                        <div class="control">
-                            <textarea class="textarea" placeholder="What would you like to know?"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="field is-horizontal">
-                <div class="field-label">
-                    <!-- Left empty for spacing -->
-                </div>
-                <div id="btn-send" class="field-body">
-                    <div class="field">
-                        <div class="control  is-flex is-justify-content-center">
-                            <button class="button is-primary is-medium is-hovered is-focused is-rounded">
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input id="user-name" name="name" class="input" type="text" placeholder="Name" required
+                                    aria-required="true" autocomplete="name">
                                 <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i></span>
-                                <span> Postage Paid</span>
-                            </button>
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input id="user-email" name="email" class="input" type="email" placeholder="Email"
+                                    required aria-required="true" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope-open" aria-hidden="true"></i>
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label for="user-message" class="label lbl-form">How can we help?</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea id="user-message" name="message" class="textarea"
+                                    placeholder="What would you like to know?" required aria-required="true"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <!-- Left empty for spacing -->
+                    </div>
+                    <div id="btn-send" class="field-body">
+                        <div class="field">
+                            <div class="control is-flex is-justify-content-center">
+                                <button type="submit"
+                                    class="button is-primary is-medium is-hovered is-focused is-rounded"
+                                    aria-label="Send Message">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                                    <span>Postage Paid</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </section>
 
         <!-- Hero footer: will stick at the bottom -->
@@ -598,27 +606,27 @@
             </nav>
         </div>
     </section>
-</body>
 
-<!-- scripts -->
-<script src="https://kit.fontawesome.com/1f32015eb0.js" crossorigin="anonymous"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/1f32015eb0.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-        // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
-                // Get the target from the "data-target" attribute
-                const target = document.getElementById('navbarMenuHeroC');
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    // Get the target from the "data-target" attribute
+                    const target = document.getElementById('navbarMenuHeroC');
 
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                el.classList.toggle('is-active');
-                target.classList.toggle('is-active');
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    target.classList.toggle('is-active');
+                });
             });
         });
-    });
-</script>
+    </script>
+</body>
 
 </html>
