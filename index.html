@@ -92,6 +92,30 @@
             box-shadow: 0 10px 15px 5px #69696960;
         }
 
+        #modals-anchor {
+            width: 100%;
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 0 4rem;
+        }
+
+        #modals-anchor a {
+            background-color: #161716f2;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 #05cae460;
+            color: #05cae490;
+        }
+
+        #modals-anchor a:hover {
+            color: #e0e0e095;
+            box-shadow: inset 0 0 10px 0 #ffffff60;
+        }
+
+        #modals {
+            height: 0;
+            width: 0;
+        }
+
         .saphira {
             align-items: flex-start !important;
         }
@@ -147,6 +171,19 @@
         .up-arrow:hover svg {
             fill: #272a27;
         }
+        
+        @media screen and (max-width: 360px) {
+            #modals-anchor {
+                font-size: smaller;
+                padding: 0;
+            }
+        }
+
+        @media screen and (min-width: 361px) and (max-width: 440px) {
+            #modals-anchor {
+                padding: 0;
+            }
+        }
 
         @media screen and (max-width: 768px) {
             h1.title.is-1 {
@@ -170,6 +207,7 @@
             div.navbar-brand.is-flex.is-justify-content-end {
                 width: 1000%;
             }
+
             a.navbar-burger.has-text-white.is-justify-content-center {
                 width: 30%;
             }
@@ -276,11 +314,56 @@
 
         <!-- Hero content: will be in the middle -->
         <section id="info" class="hero is-fullheight has-background-grey-darker is-bold">
-            <div class="hero-body saphira">
+            <div class="hero-body saphira is-flex is-flex-direction-column">
                 <div class="container has-text-right">
                     <h1 class="title is-1">Saphira</h1>
                     <h2 class="subtitle is-3">The Cutest Cat</h2>
                 </div>
+                <div id="modals-anchor" class="is-flex is-align-items-baseline is-justify-content-space-evenly is-spaced">
+                    <a href="#" class="js-modal-trigger px-4 py-2 mx-2" data-target="modal-example">
+                        Her story
+                    </a>
+                    <a href="#" class="js-modal-trigger px-4 py-2 mx-2" data-target="modal-another">
+                        Her names
+                    </a>
+                    <a href="#" class="js-modal-trigger px-4 py-2 mx-2" data-target="modal-another">
+                        Favourite Things
+                    </a>
+                </div>
+                <!-- Dedicated Modal Section -->
+        <section id="modals">
+            <!-- First Modal -->
+            <div id="modal-example" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <h1 class="title">Modal Title</h1>
+                        <p>This is the modal content. You can put any HTML here.</p>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+            <div id="modal-another" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <h1 class="title">Another Modal</h1>
+                        <p>Content for a different modal.</p>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+            <div id="modal-another" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <h1 class="title">Another Modal</h1>
+                        <p>Content for a third modal.</p>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+        </section>
             </div>
         </section>
 
@@ -665,19 +748,41 @@
     <script src="https://kit.fontawesome.com/1f32015eb0.js" crossorigin="anonymous"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Get all "navbar-burger" elements
+            // Navbar functionality
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-            // Add a click event on each of them
             $navbarBurgers.forEach(el => {
                 el.addEventListener('click', () => {
-                    // Get the target from the "data-target" attribute
                     const target = document.getElementById('navbarMenuHeroC');
-
-                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                     el.classList.toggle('is-active');
                     target.classList.toggle('is-active');
                 });
+            });
+
+            // Modal functionality
+            const openModal = $el => $el.classList.add('is-active');
+            const closeModal = $el => $el.classList.remove('is-active');
+            const closeAllModals = () => {
+                document.querySelectorAll('.modal').forEach(closeModal);
+            };
+
+            // Modal triggers
+            document.querySelectorAll('.js-modal-trigger').forEach($trigger => {
+                const $target = document.getElementById($trigger.dataset.target);
+                $trigger.addEventListener('click', e => {
+                    e.preventDefault();
+                    openModal($target);
+                });
+            });
+
+            // Modal close buttons and background
+            document.querySelectorAll('.modal-background, .modal-close').forEach($close => {
+                const $target = $close.closest('.modal');
+                $close.addEventListener('click', () => closeModal($target));
+            });
+
+            // Keyboard event for closing modals
+            document.addEventListener('keydown', e => {
+                if (e.code === 'Escape') closeAllModals();
             });
         });
     </script>
